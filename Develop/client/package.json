@@ -1,7 +1,7 @@
 {
-  "name": "JATE",
+  "name": "text-editor",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack--config webpack.config.js --open",
     "build": "webpack --mode production",
     "start": "webpack --watch"
   },

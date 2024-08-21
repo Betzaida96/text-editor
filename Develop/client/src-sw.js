@@ -30,7 +30,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // TODO: Implement asset caching
 registerRoute(
   // define the callback function that will filter the requests we want to cache(JS and CSS)
-  ({ request }) => ['style', 'script', 'image'].includes(request.destination),
+  ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   new CacheFirst({
     // name of the cache storage
     cacheName: 'asset-cache',
@@ -45,9 +45,3 @@ registerRoute(
     ],
   })
 );
-
-// Implement offline fallback for pages and assets
-// offlineFallback({
-//   pageFallback: '',
-//   imageFallback:''
-// });
